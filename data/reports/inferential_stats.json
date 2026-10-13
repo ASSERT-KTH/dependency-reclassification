@@ -1,0 +1,523 @@
+{
+  "meta": {
+    "projects": 33087,
+    "reclassifying_projects": 26187,
+    "methods": [
+      "chi-square with Cramer's V",
+      "Mann-Whitney U with Cliff's delta",
+      "log-rank on Kaplan-Meier curves"
+    ],
+    "note": "At this corpus size, interpret differences via effect sizes and absolute gaps."
+  },
+  "overall_prevalence": {
+    "share_pct": 79.14588811315622
+  },
+  "table1": {
+    "dependency_level": {
+      "One-step removal": {
+        "core": 74.22974125675292,
+        "dev": 84.01501208086225,
+        "peer": 57.25840783312048
+      },
+      "Multi-step removal": {
+        "core": 5.280636906454364,
+        "dev": 2.380194960121793,
+        "peer": 6.300553426990208
+      },
+      "Removal reversion": {
+        "core": 7.180551606482798,
+        "dev": 7.342058821301704,
+        "peer": 7.577692635163899
+      },
+      "Role oscillation": {
+        "core": 2.4094398635200456,
+        "dev": 2.318086452013603,
+        "peer": 4.21455938697318
+      },
+      "Reclassify to Core": {
+        "core": 0.0,
+        "dev": 3.8427745839866088,
+        "peer": 15.964240102171138
+      },
+      "Reclassify to Dev": {
+        "core": 9.770258743247085,
+        "dev": 0.0,
+        "peer": 8.684546615581098
+      },
+      "Reclassify to Peer": {
+        "core": 1.1293716235427922,
+        "dev": 0.10187310171404335,
+        "peer": 0.0
+      }
+    },
+    "project_level": {
+      "One-step removal": {
+        "core": 89.3938647890098,
+        "dev": 95.13478945297128,
+        "peer": 65.51724137931035
+      },
+      "Multi-step removal": {
+        "core": 16.14062730809001,
+        "dev": 10.596221959858324,
+        "peer": 7.836990595611285
+      },
+      "Removal reversion": {
+        "core": 22.394012506770398,
+        "dev": 28.63537977174341,
+        "peer": 10.893416927899686
+      },
+      "Role oscillation": {
+        "core": 7.513910089123049,
+        "dev": 9.115505706414798,
+        "peer": 5.172413793103448
+      },
+      "Reclassify to Core": {
+        "core": 0.0,
+        "dev": 17.517709563164107,
+        "peer": 18.887147335423197
+      },
+      "Reclassify to Dev": {
+        "core": 29.395834359151117,
+        "dev": 0.0,
+        "peer": 12.068965517241379
+      },
+      "Reclassify to Peer": {
+        "core": 6.0564281845487224,
+        "dev": 1.0330578512396693,
+        "peer": 0.0
+      }
+    },
+    "N_deps": {
+      "core": 175850,
+      "dev": 264054,
+      "peer": 2349
+    },
+    "N_projs": {
+      "core": 20309,
+      "dev": 20328,
+      "peer": 1276
+    },
+    "chi2_composition": {
+      "chi2": 12593.71571895269,
+      "dof": 8,
+      "p": 0.0,
+      "cramers_v": 0.11932365594180731,
+      "categories": [
+        "onestep",
+        "multistep",
+        "reversion",
+        "oscillation",
+        "reassignment"
+      ]
+    },
+    "chi2_pairwise_composition": {
+      "core-dev": {
+        "chi2": 11370.464457994975,
+        "dof": 4,
+        "p": 0.0,
+        "cramers_v": 0.16077190101050426
+      },
+      "core-peer": {
+        "chi2": 521.7778206501011,
+        "dof": 4,
+        "p": 1.3046768749858173e-111,
+        "cramers_v": 0.05411157512881875
+      },
+      "dev-peer": {
+        "chi2": 2801.4035195603283,
+        "dof": 4,
+        "p": 0.0,
+        "cramers_v": 0.10254589488481577
+      }
+    }
+  },
+  "batch_removal": {
+    "batch_dep_ge2": {
+      "label": "share of one-step removals in commits deleting >=2 deps (dependency-weighted)",
+      "by_role": {
+        "core": 60.86004988190212,
+        "dev": 79.30093073272026,
+        "peer": 36.39484978540773
+      }
+    },
+    "batch_dep_ge5": {
+      "label": "share of one-step removals in commits deleting >=5 deps (dependency-weighted)",
+      "by_role": {
+        "core": 34.48458120674562,
+        "dev": 54.21564446751706,
+        "peer": 9.6137339055794
+      }
+    },
+    "batch_commit_size1": {
+      "label": "share of one-step removal commits deleting exactly 1 dep",
+      "by_role": {
+        "core": 73.97758491508492,
+        "dev": 58.471469348207506,
+        "peer": 83.07174887892377
+      }
+    },
+    "batch_commit_ge2": {
+      "label": "share of one-step removal commits deleting >=2 deps",
+      "by_role": {
+        "core": 26.022415084915085,
+        "dev": 41.528530651792494,
+        "peer": 16.928251121076233
+      }
+    },
+    "chi2_pairwise_dep_ge2": {
+      "core-dev": {
+        "chi2": 13280.273675323777,
+        "p": 0.0,
+        "phi": 0.19856291040794516
+      },
+      "core-peer": {
+        "chi2": 289.334376856444,
+        "p": 6.943687025700685e-65,
+        "phi": 0.04864898775168164
+      },
+      "dev-peer": {
+        "chi2": 1288.9949620364278,
+        "p": 2.784701000458439e-282,
+        "phi": 0.07708800808934296
+      }
+    }
+  },
+  "partial_reversal": {
+    "strict": {
+      "n_batch_reversions_ge2": 1123,
+      "partial_ge2_pct": 58.325912733748886,
+      "n_batch_reversions_ge3": 577,
+      "partial_ge3_pct": 63.258232235701904
+    },
+    "loose": {
+      "n_batch_reversions_ge2": 3621,
+      "partial_ge2_pct": 61.14333057166529,
+      "n_batch_reversions_ge3": 2013,
+      "partial_ge3_pct": 68.65375062096373
+    }
+  },
+  "durations": {
+    "overall_median_days": 408.2636111111111,
+    "by_practice": {
+      "Multi-step removal [s1]": {
+        "median_days": {
+          "core": 76.14084490740741,
+          "dev": 114.44265625,
+          "peer": 41.07263888888889
+        },
+        "n": {
+          "core": 7849,
+          "dev": 5020,
+          "peer": 87
+        },
+        "mannwhitney_cliffs": {
+          "core-dev": {
+            "cliffs_delta": -0.07081372560465238,
+            "p": 1.1486237544583324e-11
+          },
+          "core-peer": {
+            "cliffs_delta": 0.1756560247077379,
+            "p": 0.0047723188677347905
+          },
+          "dev-peer": {
+            "cliffs_delta": 0.2341072491642624,
+            "p": 0.00017728239770116834
+          }
+        }
+      },
+      "Multi-step removal [tot]": {
+        "median_days": {
+          "core": 646.9156134259259,
+          "dev": 630.058587962963,
+          "peer": 504.9386574074074
+        },
+        "n": {
+          "core": 7849,
+          "dev": 5020,
+          "peer": 87
+        },
+        "mannwhitney_cliffs": {
+          "core-dev": {
+            "cliffs_delta": 0.01418938845205231,
+            "p": 0.17387506547619813
+          },
+          "core-peer": {
+            "cliffs_delta": 0.20895406545676076,
+            "p": 0.0007880210593846996
+          },
+          "dev-peer": {
+            "cliffs_delta": 0.19547556898841423,
+            "p": 0.0017442042572880598
+          }
+        }
+      },
+      "One-time removal [tot]": {
+        "median_days": {
+          "core": 293.17199074074074,
+          "dev": 502.1439525462963,
+          "peer": 223.27256944444446
+        },
+        "n": {
+          "core": 121086,
+          "dev": 215744,
+          "peer": 1165
+        },
+        "mannwhitney_cliffs": {
+          "core-dev": {
+            "cliffs_delta": -0.18096402617189056,
+            "p": 0.0
+          },
+          "core-peer": {
+            "cliffs_delta": 0.06951048660551895,
+            "p": 4.319066283280388e-05
+          },
+          "dev-peer": {
+            "cliffs_delta": 0.24711305037412012,
+            "p": 4.381896558354665e-48
+          }
+        }
+      },
+      "Reclassify to Core [tot]": {
+        "median_days": {
+          "dev": 200.98938657407408,
+          "peer": 319.8433101851852
+        },
+        "n": {
+          "dev": 9859,
+          "peer": 365
+        },
+        "mannwhitney_cliffs": {
+          "dev-peer": {
+            "cliffs_delta": -0.11604944790032612,
+            "p": 0.00016272143645056336
+          }
+        }
+      },
+      "Reclassify to Dev [tot]": {
+        "median_days": {
+          "core": 178.1454513888889,
+          "peer": 419.9297800925926
+        },
+        "n": {
+          "core": 16654,
+          "peer": 145
+        },
+        "mannwhitney_cliffs": {
+          "core-peer": {
+            "cliffs_delta": -0.18850478087484424,
+            "p": 9.061031106675504e-05
+          }
+        }
+      },
+      "Reclassify to Peer [tot]": {
+        "median_days": {
+          "core": 343.66144097222224,
+          "dev": 313.56380208333337
+        },
+        "n": {
+          "core": 1914,
+          "dev": 182
+        },
+        "mannwhitney_cliffs": {
+          "core-dev": {
+            "cliffs_delta": 0.006691584277791263,
+            "p": 0.8813030188362567
+          }
+        }
+      },
+      "Removal reversion [s1]": {
+        "median_days": {
+          "core": 92.8318287037037,
+          "dev": 166.16407407407408,
+          "peer": 198.6355324074074
+        },
+        "n": {
+          "core": 11969,
+          "dev": 18382,
+          "peer": 185
+        },
+        "mannwhitney_cliffs": {
+          "core-dev": {
+            "cliffs_delta": -0.10449752510927046,
+            "p": 1.4054763403918499e-53
+          },
+          "core-peer": {
+            "cliffs_delta": -0.1959810591776504,
+            "p": 4.615728502035458e-06
+          },
+          "dev-peer": {
+            "cliffs_delta": -0.07859598255637856,
+            "p": 0.06543208516255067
+          }
+        }
+      },
+      "Removal reversion [tot]": {
+        "median_days": {
+          "core": 273.12902777777776,
+          "dev": 412.1300694444444,
+          "peer": 579.8397453703703
+        },
+        "n": {
+          "core": 11969,
+          "dev": 18382,
+          "peer": 185
+        },
+        "mannwhitney_cliffs": {
+          "core-dev": {
+            "cliffs_delta": -0.12457686018551584,
+            "p": 2.2479102475191456e-75
+          },
+          "core-peer": {
+            "cliffs_delta": -0.23582317382969065,
+            "p": 3.528787477536189e-08
+          },
+          "dev-peer": {
+            "cliffs_delta": -0.10712859524740714,
+            "p": 0.012035453894134478
+          }
+        }
+      },
+      "Role oscillation [s1]": {
+        "median_days": {
+          "core": 110.69166666666666,
+          "dev": 108.94461805555555,
+          "peer": 52.881388888888885
+        },
+        "n": {
+          "core": 4129,
+          "dev": 6039,
+          "peer": 151
+        },
+        "mannwhitney_cliffs": {
+          "core-dev": {
+            "cliffs_delta": -0.017623278671680787,
+            "p": 0.1306572961092897
+          },
+          "core-peer": {
+            "cliffs_delta": 0.10665796281831463,
+            "p": 0.025787878832641893
+          },
+          "dev-peer": {
+            "cliffs_delta": 0.12862201430217923,
+            "p": 0.006856532840248548
+          }
+        }
+      },
+      "Role oscillation [tot]": {
+        "median_days": {
+          "core": 309.7876504629629,
+          "dev": 351.2774652777778,
+          "peer": 216.31137731481482
+        },
+        "n": {
+          "core": 4129,
+          "dev": 6039,
+          "peer": 151
+        },
+        "mannwhitney_cliffs": {
+          "core-dev": {
+            "cliffs_delta": -0.06809295725359232,
+            "p": 5.213435066538117e-09
+          },
+          "core-peer": {
+            "cliffs_delta": 0.11640969463285855,
+            "p": 0.01496490209212061
+          },
+          "dev-peer": {
+            "cliffs_delta": 0.18758533110937847,
+            "p": 8.040282509493936e-05
+          }
+        }
+      }
+    },
+    "core_to_dev_vs_dev_to_core": {
+      "median_core_to_dev": 178.1454513888889,
+      "median_dev_to_core": 200.98938657407408,
+      "diff_days": -22.843935185185188,
+      "cliffs_delta": -0.023239944536567747,
+      "mannwhitney_p": 0.0015368972447010081
+    }
+  },
+  "survival": {
+    "first": {
+      "n": {
+        "core": {
+          "n": 349113,
+          "events": 175850
+        },
+        "dev": {
+          "n": 540809,
+          "events": 264054
+        },
+        "peer": {
+          "n": 4695,
+          "events": 2349
+        }
+      },
+      "S_3y_pct": {
+        "core": 45.68278206737063,
+        "dev": 49.76530416887083,
+        "peer": 43.61530132976751
+      },
+      "cumulative_incidence_3y_pct": {
+        "core": 54.31721793262937,
+        "dev": 50.23469583112917,
+        "peer": 56.38469867023248
+      },
+      "logrank_pairwise": {
+        "core-dev": {
+          "statistic": 35.86067176624892,
+          "p": 1.2539677295949768e-281
+        },
+        "core-peer": {
+          "statistic": -3.6715665605763164,
+          "p": 0.00024106827555707603
+        },
+        "dev-peer": {
+          "statistic": -9.90719265021709,
+          "p": 3.873779923442368e-23
+        }
+      }
+    },
+    "return": {
+      "n": {
+        "core": {
+          "n": 175850,
+          "events": 17376
+        },
+        "dev": {
+          "n": 264054,
+          "events": 25838
+        },
+        "peer": {
+          "n": 2349,
+          "events": 294
+        }
+      },
+      "S_3y_pct": {
+        "core": 88.06685480076173,
+        "dev": 87.82765449053963,
+        "peer": 83.75700822464648
+      },
+      "cumulative_incidence_3y_pct": {
+        "core": 11.933145199238272,
+        "dev": 12.172345509460369,
+        "peer": 16.24299177535352
+      },
+      "logrank_pairwise": {
+        "core-dev": {
+          "statistic": -1.5496633742427084,
+          "p": 0.1212223333262653
+        },
+        "core-peer": {
+          "statistic": -4.68842079532909,
+          "p": 2.7532143629044706e-06
+        },
+        "dev-peer": {
+          "statistic": -4.488107794416662,
+          "p": 7.185856921506768e-06
+        }
+      }
+    }
+  }
+}

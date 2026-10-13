@@ -8,6 +8,8 @@ This repository accompanies the paper:
 
 It provides the curated project list, per-project dependency-manifest histories, reclassification graphs, and the scripts used to mine and analyze dependency role changes in `package.json`.
 
+**Repository:** https://github.com/ASSERT-KTH/dependency-reclassification
+
 ---
 
 ## Repository structure
@@ -76,13 +78,13 @@ Top-level object keyed by repository. Each repository maps dependency names to l
 ## Environment
 
 - Python 3.9+
-- Packages used by the scripts: `jsondiff`, `numpy`, `requests`
+- Packages used by the scripts: `jsondiff`, `numpy`, `requests`, `scipy`
 - Git (required only if re-running mining from GitHub)
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install jsondiff numpy requests
+pip install jsondiff numpy requests scipy
 ```
 
 For mining against GitHub at scale, set a token via environment variable (do **not** hard-code tokens in scripts):
@@ -118,9 +120,14 @@ python scripts/analysis/compute_practice_duration_stats.py
 python scripts/analysis/analyze_batch_removal_source_batchsize.py
 python scripts/analysis/analyze_practice_timing_by_role.py
 python scripts/analysis/analyze_core_to_dev_families.py
+
+# Inferential tests and effect sizes reported in Section 4
+python scripts/analysis/compute_inferential_stats.py
+# writes data/reports/inferential_stats.json
 ```
 
 Exact output paths are configured at the top of each script. Adjust `BASE_DIR` if needed so shards resolve under `datasets/splitted_files/`.
+For `compute_inferential_stats.py`, pass `--packaged` to read graphs from `datasets/splitted_files/` when the original working-tree path is unavailable.
 
 ### Full re-mining (optional, expensive)
 
@@ -146,6 +153,7 @@ python scripts/graph/build_role_transition_graph.py <shard_id>
 | `scripts/analysis/` | `analyze_onetime_removal_by_batch_size.py`, `analyze_batch_removal_origins.py`, `analyze_batch_removal_source_batchsize.py`, `analyze_batch_removal_family_cohesion.py`, `analyze_selective_batch_reversal.py`, `analyze_removal_reversion_timing.py` | RQ2 removal / reversion |
 | `scripts/analysis/` | `analyze_core_to_dev_families.py`, `classify_core_to_dev_dependencies.py` | RQ3 reassignment / family concentration |
 | `scripts/analysis/` | `analyze_practice_timing_by_role.py` | RQ4 practice timing tables |
+| `scripts/analysis/` | `compute_inferential_stats.py` | Statistical tests and effect sizes in §4 (chi-squared + Cramér's *V*, Mann–Whitney + Cliff's *δ*, log-rank) |
 | `scripts/analysis/` | `compute_dataset_descriptive_stats.py` | Dataset descriptive statistics |
 
 Path names in scripts may still refer to the original working-tree layout (`splitted_files/`). When in doubt, open the configuration block at the top of the script.
@@ -161,6 +169,7 @@ Path names in scripts may still refer to the original working-tree layout (`spli
 | §3.3.2 Reclassification events | `*_analysis.txt` → `*_graph.json` |
 | §3.3.3–3.3.4 Sequences & practice taxonomy | `classify_path_patterns.py`, `compute_practice_duration_stats.py` |
 | §4 Results (RQ1–RQ4) | scripts under `scripts/analysis/` |
+| §4 statistical tests / effect sizes | `scripts/analysis/compute_inferential_stats.py`; `data/reports/inferential_stats.json` |
 
 ---
 
